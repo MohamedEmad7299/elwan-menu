@@ -3795,16 +3795,18 @@ function applyLanguage(lang) {
     if (dict[key]) {
       if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
         el.placeholder = dict[key];
+      } else if (el.hasAttribute("data-i18n-html") || /<[a-z][\s\S]*>/i.test(dict[key])) {
+        el.innerHTML = dict[key];
       } else {
         el.textContent = dict[key];
       }
     }
   });
 
-  // Update elements with data-i18n-html
+  // Update elements with data-i18n-html as key directly
   document.querySelectorAll("[data-i18n-html]").forEach((el) => {
     const key = el.getAttribute("data-i18n-html");
-    if (dict[key]) {
+    if (key && key !== "true" && dict[key]) {
       el.innerHTML = dict[key];
     }
   });
