@@ -32,7 +32,7 @@ const I18N = {
     brandSubtitle: "للمذاق عنوان",
     brandTagline: "مطعم • كافيه • حلويات شرقية وغربية",
     navMenu: "المنيو",
-    navBranches: "الفروع والطلب",
+    navBranches: "الفرع والتوصيل",
     navQR: "رمز QR",
     navCall: "اتصل بنا",
     navCart: "طلبك",
@@ -42,7 +42,7 @@ const I18N = {
     hotlineLabel: "خدمة التوصيل والطلب السريع:",
     complaintsLabel: "للشكاوى والمقترحات:",
     ctaMenu: "تصفح المنيو",
-    ctaBranches: "الفروع والتوصيل",
+    ctaBranches: "الفرع والتوصيل",
     ctaFlyer: "عرض المنيو الأصلي",
     branchBalyanaTitle: "فرع البلينا الرئيسي (صالة ومطعم وتوصيل)",
     branchBalyanaDesc: "البلينا - بجوار بنك مصر الجديد - سوهاج",
@@ -84,7 +84,7 @@ const I18N = {
     tagCharcoal: "مشوي فحم 🔥",
     tagNew: "جديد ⚡",
     tagNatural: "طبيعي 100% 🌿",
-    branchesSectionTitle: "فروعنا وخدمة التوصيل السريع",
+    branchesSectionTitle: "فرعنا وخدمة التوصيل السريع",
     branchesSectionSubtitle: "نصلك أينما كنت في البلينا وقرى المركز ساخناً وطازجاً بأعلى معايير الجودة",
     orderModalTitle: "سلة الطلب السريع عبر واتساب",
     emptyCartTitle: "سلتك فارغة حتى الآن",
@@ -138,7 +138,7 @@ const I18N = {
     brandSubtitle: "For Taste, An Address",
     brandTagline: "Restaurant • Cafe • Oriental & Western Sweets",
     navMenu: "Menu",
-    navBranches: "Branches & Order",
+    navBranches: "Branch & Delivery",
     navQR: "QR Code",
     navCall: "Call Us",
     navCart: "Order",
@@ -148,7 +148,7 @@ const I18N = {
     hotlineLabel: "Express Delivery & Ordering Hotlines:",
     complaintsLabel: "Complaints & Suggestions:",
     ctaMenu: "Explore Menu",
-    ctaBranches: "Branches & Delivery",
+    ctaBranches: "Branch & Delivery",
     ctaFlyer: "View Original Flyer",
     branchBalyanaTitle: "El Balyana Main Branch (Dine-in & Delivery)",
     branchBalyanaDesc: "El Balyana - Next to New Banque Misr - Sohag",
@@ -190,7 +190,7 @@ const I18N = {
     tagCharcoal: "Charcoal Grilled 🔥",
     tagNew: "NEW ⚡",
     tagNatural: "100% Fresh 🌿",
-    branchesSectionTitle: "Branches & Fast Delivery",
+    branchesSectionTitle: "Our Branch & Fast Delivery",
     branchesSectionSubtitle: "Delivered fresh, sizzling and crispy anywhere in El Balyana & surrounding villages",
     orderModalTitle: "Fast WhatsApp Checkout",
     emptyCartTitle: "Your cart is empty",
@@ -241,45 +241,19 @@ const I18N = {
   }
 };
 
-// Available Branches & Delivery Routing Configuration
+// Official Restaurant Branch Configuration (Single Branch)
 const BRANCHES_DATA = [
   {
     id: "balyana_main",
-    nameAr: "فرع البلينا الرئيسي (صالة ومطعم وتوصيل)",
-    nameEn: "El Balyana Main Branch (Dine-in & Delivery)",
-    addressAr: "البلينا - بجوار بنك مصر الجديد - سوهاج",
-    addressEn: "El Balyana - Next to New Banque Misr - Sohag",
+    nameAr: "فرع البلينا (صالة ومطعم وتوصيل)",
+    nameEn: "El Balyana Branch (Dine-in & Delivery)",
+    addressAr: "البلينا - بجوار بنك مصر الجديد - محافظة سوهاج",
+    addressEn: "El Balyana - Next to New Banque Misr - Sohag Governorate",
     phone: "01212663434",
     whatsapp: "01212663434",
     hotline: "01100089498",
     complaints: "01033034090",
     isMain: true,
-    mapsUrl: "https://maps.app.goo.gl/6oUHVts39puZDvPd7"
-  },
-  {
-    id: "balyana_delivery",
-    nameAr: "خدمة التوصيل السريع لمدينة البلينا والقرى المجاورة",
-    nameEn: "Express Delivery: El Balyana City & Villages",
-    addressAr: "توصيل لكافة أحياء البلينا وقرى المركز بالكامل",
-    addressEn: "Fast delivery to all El Balyana neighborhoods and surrounding villages",
-    phone: "01212663434",
-    whatsapp: "01212663434",
-    hotline: "01100089498",
-    complaints: "01033034090",
-    isMain: false,
-    mapsUrl: "https://maps.app.goo.gl/6oUHVts39puZDvPd7"
-  },
-  {
-    id: "balyana_takeaway",
-    nameAr: "تجهيز طلبات الاستلام السريع (تيك أواي)",
-    nameEn: "Quick Takeaway & In-Store Pickup",
-    addressAr: "الاستلام المباشر ساخناً من شباك تيك أواي الفرع",
-    addressEn: "Direct pickup hot & fresh from our takeaway counter",
-    phone: "01212663434",
-    whatsapp: "01212663434",
-    hotline: "01100089498",
-    complaints: "01033034090",
-    isMain: false,
     mapsUrl: "https://maps.app.goo.gl/6oUHVts39puZDvPd7"
   }
 ];
@@ -4335,17 +4309,21 @@ function renderBranchesSection() {
           </div>
           <div class="branch-contact-item">
             <span class="icon">💬</span>
-            <a href="https://wa.me/20${branch.whatsapp.slice(1)}" target="_blank" rel="noopener">واتساب: ${branch.whatsapp}</a>
+            <a href="https://wa.me/20${branch.whatsapp.slice(1)}" target="_blank" rel="noopener">${isAr ? "واتساب:" : "WhatsApp:"} ${branch.whatsapp}</a>
           </div>
           <div class="branch-contact-item">
             <span class="icon">🔥</span>
-            <a href="tel:${branch.hotline}">الخط الساخن: ${branch.hotline}</a>
+            <a href="tel:${branch.hotline}">${isAr ? "الخط الساخن:" : "Hotline:"} ${branch.hotline}</a>
+          </div>
+          <div class="branch-contact-item">
+            <span class="icon">📝</span>
+            <a href="tel:${branch.complaints}">${isAr ? "للشكاوى والمقترحات:" : "Complaints:"} ${branch.complaints}</a>
           </div>
         </div>
 
         <div class="branch-card-actions">
-          <button class="branch-select-btn" onclick="selectBranch('${branch.id}')">
-            ${isAr ? "اختيار هذا الفرع للطلب" : "Order from this branch"}
+          <button class="branch-select-btn" onclick="handleBranchOrderClick()">
+            ${isAr ? "بدء الطلب الآن" : "Start Order Now"}
           </button>
           <a href="${branch.mapsUrl}" target="_blank" rel="noopener" class="branch-map-btn">
             ${dict.btnOpenMap}
@@ -4354,6 +4332,17 @@ function renderBranchesSection() {
       </div>
     `;
   }).join("");
+}
+
+function handleBranchOrderClick() {
+  if (cart && cart.length > 0) {
+    openModal("cartModal");
+  } else {
+    const el = document.getElementById("menuSection");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 }
 
 function renderBranchRadioList(filter = "") {

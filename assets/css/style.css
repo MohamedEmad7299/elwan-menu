@@ -860,9 +860,14 @@ img {
 }
 
 .branches-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.branches-grid .branch-card {
+  width: 100%;
+  max-width: 620px;
 }
 
 .branch-card {
