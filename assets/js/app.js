@@ -254,7 +254,7 @@ const BRANCHES_DATA = [
     hotline: "01100089498",
     complaints: "01033034090",
     isMain: true,
-    mapsUrl: "https://maps.google.com/?q=El+Balyana+Sohag"
+    mapsUrl: "https://maps.app.goo.gl/6oUHVts39puZDvPd7"
   },
   {
     id: "balyana_delivery",
@@ -267,7 +267,7 @@ const BRANCHES_DATA = [
     hotline: "01100089498",
     complaints: "01033034090",
     isMain: false,
-    mapsUrl: "https://maps.google.com/?q=El+Balyana+Sohag"
+    mapsUrl: "https://maps.app.goo.gl/6oUHVts39puZDvPd7"
   },
   {
     id: "balyana_takeaway",
@@ -280,7 +280,7 @@ const BRANCHES_DATA = [
     hotline: "01100089498",
     complaints: "01033034090",
     isMain: false,
-    mapsUrl: "https://maps.google.com/?q=El+Balyana+Sohag"
+    mapsUrl: "https://maps.app.goo.gl/6oUHVts39puZDvPd7"
   }
 ];
 
