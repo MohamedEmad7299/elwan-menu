@@ -4343,7 +4343,7 @@ function renderBranchesSection() {
 
         <div class="branch-card-actions">
           <button class="branch-select-btn" onclick="selectBranch('${branch.id}')">
-            ${isAr ? "اختيار هذا الفرع للطلب 🚀" : "Order from this branch 🚀"}
+            ${isAr ? "اختيار هذا الفرع للطلب" : "Order from this branch"}
           </button>
           <a href="${branch.mapsUrl}" target="_blank" rel="noopener" class="branch-map-btn">
             ${dict.btnOpenMap}
